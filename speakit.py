@@ -1,4 +1,5 @@
 import string
+import re
 
 def main():
 
@@ -21,11 +22,24 @@ def main():
     for line in lines:
         parts = line.split()
         for part in parts:
-            if part:
-                part = part.strip().lower()
+            part_cleaned= re.sub(r'\W+', '', part)
+            if part and part.isnumeric()==False:
+                part = part_cleaned.strip().lower()
                 words.append(part)
 
-    print(words[0:150])
-    
+    print(words[300:500])
+    #TODO:
+    #trim off ":" or "-" and others
+    #check done
+    #add tests to check above
+    #remove numbers, and do test
+    #split into functions
+    #create dictionary of words by frequency
+    #decide data structure to capture "ce" words
+    #can use: contains, list of key="ce", value="words" or key"word", value="ce" 
+    #Or somekind of trie 
+    #See Tim ripgrep example if unsure. 
+    #Need text that does not contain german or other random non-italian words
+
 main()
 
