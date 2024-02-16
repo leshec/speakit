@@ -22,7 +22,7 @@ def main():
         parts = line.split()
         for part in parts:
             if part:
-                part = part.strip()
+                part = part.strip().lower()
                 words.append(part)
 
     print(words[0:150])
