@@ -23,11 +23,15 @@ def main():
         parts = line.split()
         for part in parts:
             part_cleaned= re.sub(r'\W+', '', part)
-            if part and part.isnumeric()==False:
+            if part and part.isnumeric()==False and len(part) > 2:
                 part = part_cleaned.strip().lower()
                 words.append(part)
 
-    print(words[300:500])
+
+    for word in words:
+        if "ce" in word:
+            print(word)
+
     #TODO:
     #trim off ":" or "-" and others
     #check done
