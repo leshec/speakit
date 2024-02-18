@@ -47,16 +47,9 @@ def main():
                     print(key)
                     count += 1
 
-    #trim off ":" or "-" and others
-    #check done
+    #TODO: 
     #add tests to check above
-    #remove numbers, and do test
     #split into functions
-    #create dictionary of words by frequency
-    #decide data structure to capture "ce" words
-    #can use: contains, list of key="ce", value="words" or key"word", value="ce" 
-    #Or somekind of trie 
-    #See Tim ripgrep example if unsure. 
     #Need text that does not contain german or other random non-italian words
 
 main()
