@@ -10,8 +10,8 @@ def main():
     freq = {}
     try:
         for line in f:
+            #line.split("\n")
             line.translate(str.maketrans('', '', string.punctuation))
-            line.split("\n")
             lines.append(line)
         f.close()
     except FileNotFoundError() as e:
