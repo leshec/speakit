@@ -10,8 +10,6 @@ def main():
     freq = {}
     try:
         for line in f:
-            #line.split("\n")
-            line.translate(str.maketrans('', '', string.punctuation))
             lines.append(line)
         f.close()
     except FileNotFoundError() as e:
@@ -23,34 +21,52 @@ def main():
     for line in lines:
         parts = line.split()
         for part in parts:
-            part_cleaned= re.sub(r'\W+', '', part)
-            if len(part) > 2:
-                    part = part_cleaned.strip().lower()
-                    if part in freq:
-                        freq[part] += 1
-                    elif part.isalpha():
-                        freq[part] = 1
+            part = part.lower().strip()
+            #take out conjugates "l'ufficio"
+            if "-" not in part and "'" not in part:  
+                part_cleaned = re.sub(r'\W+', '', part)
+                if len(part) > 2:
+                        if part in freq:
+                            freq[part] += 1
+                        elif part.isalpha():
+                            freq[part] = 1
 
 
     sorted_dict = dict(sorted(freq.items(), key=lambda x: x[1], reverse=True))
 
+
+    f = open("dict.txt", 'w')
+    try:
+        for key in sorted_dict:
+            f.write(key + "\n")
+        f.close()
+    except FileNotFoundError() as e:
+        raise("file not found xxx", e)
+    finally:
+        f.close()
+
+
     num_words_to_spit = 15
     while True:
-        user_input = input("type a substring or press q: ")
+        word_not_found = True
+        user_input = input("\n"+"Type a substring or press q: ")
         if user_input == 'q':
-            sys.exit("game over")
+            sys.exit("Game over")
         sub = user_input
         count = 0
         for key in sorted_dict:
             if sub in key:
+                word_not_found = False
                 if count < num_words_to_spit:
                     print(key)
                     count += 1
+        if word_not_found:
+            print("Sub not in any word")
 
     #TODO: 
     #add tests to check above
     #split into functions
-    #Need text that does not contain german or other random non-italian words
+    #Need text that does not contain so many non-italian words
 
 main()
 
