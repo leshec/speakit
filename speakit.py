@@ -1,3 +1,4 @@
+import sys
 import string
 import re
 
@@ -6,7 +7,7 @@ def main():
     f = open("data.txt", 'r')
 
     lines = []
-    words = []
+    freq = {}
     try:
         for line in f:
             line.translate(str.maketrans('', '', string.punctuation))
@@ -23,16 +24,29 @@ def main():
         parts = line.split()
         for part in parts:
             part_cleaned= re.sub(r'\W+', '', part)
-            if part and part.isnumeric()==False and len(part) > 2:
-                part = part_cleaned.strip().lower()
-                words.append(part)
+            if len(part) > 2:
+                    part = part_cleaned.strip().lower()
+                    if part in freq:
+                        freq[part] += 1
+                    elif part.isalpha():
+                        freq[part] = 1
 
 
-    for word in words:
-        if "ce" in word:
-            print(word)
+    sorted_dict = dict(sorted(freq.items(), key=lambda x: x[1], reverse=True))
 
-    #TODO:
+    num_words_to_spit = 15
+    while True:
+        user_input = input("type a substring or press q: ")
+        if user_input == 'q':
+            sys.exit("game over")
+        sub = user_input
+        count = 0
+        for key in sorted_dict:
+            if sub in key:
+                if count < num_words_to_spit:
+                    print(key)
+                    count += 1
+
     #trim off ":" or "-" and others
     #check done
     #add tests to check above
