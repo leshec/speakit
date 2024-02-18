@@ -31,25 +31,12 @@ def main():
                         elif part.isalpha():
                             freq[part] = 1
 
-
     sorted_dict = dict(sorted(freq.items(), key=lambda x: x[1], reverse=True))
-
-
-    f = open("dict.txt", 'w')
-    try:
-        for key in sorted_dict:
-            f.write(key + "\n")
-        f.close()
-    except FileNotFoundError() as e:
-        raise("file not found xxx", e)
-    finally:
-        f.close()
-
 
     num_words_to_spit = 15
     while True:
         word_not_found = True
-        user_input = input("\n"+"Type a substring or press q: ")
+        user_input = input("\n"+"Type a substring or press q: " + "\n")
         if user_input == 'q':
             sys.exit("Game over")
         sub = user_input
