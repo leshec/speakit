@@ -17,6 +17,7 @@ class TestWordFrequency(unittest.TestCase):
         self.assertEqual(clean_word("perciò"), "perciò")
         self.assertIsNone(clean_word("123"))
         self.assertIsNone(clean_word("l'ufficio"))
+        self.assertIsNone(clean_word("ka-ban"))
 
     def test_count_frequency(self):
         # Test the count_frequency function
