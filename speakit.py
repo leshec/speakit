@@ -36,7 +36,7 @@ def main():
     num_words_to_spit = 15
     while True:
         word_not_found = True
-        user_input = input("\n"+"Type a substring or press q: " + "\n")
+        user_input = input("\n"+"Type a substring or press q to quit: " + "\n")
         if user_input == 'q':
             sys.exit("Game over")
         sub = user_input
