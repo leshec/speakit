@@ -6,7 +6,7 @@ class TestWordFrequency(unittest.TestCase):
         # Define some sample data for testing
         self.lines = [
             "This is a test file for checking the functionality of the code.",
-            "It contains some words like cielo, camicia, civile, perciò, etc.",
+            "It contains some words like cielo, camicia, cielo, civile, perciò, etc.",
             "We will use this file to test if the code correctly retrieves words containing a given substring."
         ]
 
@@ -21,16 +21,19 @@ class TestWordFrequency(unittest.TestCase):
     def test_count_frequency(self):
         # Test the count_frequency function
         freq = count_frequency(self.lines)
-        self.assertEqual(freq["cielo"], 1)
+        self.assertEqual(freq["cielo"], 2)
         self.assertEqual(freq["camicia"], 1)
         self.assertEqual(freq["perciò"], 1)
-        self.assertEqual(freq["code"], 1)  # Testing a non-existing word
-        self.assertEqual(freq["this"], 1)  # Testing case-insensitivity
+        self.assertEqual(freq["balloon"], 0)  # Testing a non-existing word
+        self.assertEqual(freq["this"], 2)  # Testing case-insensitivity
 
     def test_get_matching_words(self):
         # Test the get_matching_words function
-        freq = {"cielo": 1, "camicia": 1, "perciò": 1}
-        self.assertEqual(get_matching_words(freq, "ci"), ["cielo", "camicia", "civile", "perciò", "rancio", "cucina", "cielo"])
+        freq = {"cielo": 2, "camicia": 1, "finito": 4, "finita": 9, "perciò": 1, "due": 1, "settimana": 3}
+        self.assertEqual(get_matching_words(freq, "ci"), ["cielo", "camicia", "perciò"])
+        self.assertEqual(get_matching_words(freq, "ue"), ["due"])
+        self.assertEqual(get_matching_words(freq, "it"), ["finita", "finito"])
+        self.assertEqual(get_matching_words(freq, "a"), ["finita", "settimana", "camicia"])
 
 if __name__ == '__main__':
     unittest.main()

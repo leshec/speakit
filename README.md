@@ -14,19 +14,19 @@ Output:
 
 invece \
 dice \
-certo \
 voce \
 cuccetta \
-cerca \
-cento \
-luce \
+certo \
 cuccette \
+francese \
+luce \
 francesi \
-fece \
+cento \
+cerca \
+semplice \
 faceva \
-cercare \
-esce \
-necessario 
+necessario \
+fece \
 
 Note: 
 
