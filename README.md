@@ -7,8 +7,10 @@ When prompted enter a substring e.g. "ce". Upto 15 words will be listed.
 
 Example: 
 
->>Type a substring or press qi to quit:
->>ce
+`Type a substring or press qi to quit:` \
+`ce` \
+
+Output: 
 
 invecae \
 dice \
@@ -17,16 +19,18 @@ voce \
 cuccetta \
 cerca \
 cento \
-luce
-cuccette
-francesi
-fece
-faceva
-cercare
-esce
-necessario
+luce \
+cuccette \
+francesi \
+fece \
+faceva \
+cercare \
+esce \
+necessario \
 
 Replace data.txt with whatever text file you want to use.
+
+Note: 
 
 I'm using Primo Levi "If this is a man" / "Se questo è un uomo" as a source to get frequently used words.
 
