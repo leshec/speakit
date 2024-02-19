@@ -36,6 +36,7 @@ def main():
         else:
             print(f"Substring {user_input} not found in any word")
 
+    
 if __name__ == "__main__":
     main()
 

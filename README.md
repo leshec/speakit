@@ -7,8 +7,8 @@ When prompted enter a substring e.g. "ce". Upto 15 words will be listed.
 
 Example: 
 
-`Type a substring or press qi to quit:` \
-`ce` 
+`Type a substring or press q to quit:` \
+`type ce press enter` 
 
 Output: 
 
