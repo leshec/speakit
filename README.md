@@ -10,14 +10,13 @@ Example:
 >>Type a substring or press qi to quit:
 >>ce
 
-*ce*
-inve*ce*
-di*ce*
-certo
-voce
-cuccetta
-cerca
-cento
+invecae\n
+dice\n
+certo\n
+voce\n
+cuccetta\n
+cerca\n
+cento\n
 luce
 cuccette
 francesi
