@@ -7,10 +7,12 @@ When prompted enter a substring e.g. "ce". Upto 15 words will be listed.
 
 Example: 
 
-Type a substring or press qi to quit:
-ce
-invece
-dice
+>>Type a substring or press qi to quit:
+>>ce
+
+*ce*
+inve*ce*
+di*ce*
 certo
 voce
 cuccetta
