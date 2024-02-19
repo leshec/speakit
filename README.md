@@ -8,7 +8,7 @@ When prompted enter a substring e.g. "ce". Upto 15 words will be listed.
 Example: 
 
 `Type a substring or press qi to quit:` \
-`ce` \
+`ce` 
 
 Output: 
 
@@ -26,11 +26,11 @@ fece \
 faceva \
 cercare \
 esce \
-necessario \
-
-Replace data.txt with whatever text file you want to use.
+necessario 
 
 Note: 
+
+Replace data.txt with whatever text file you want to use and add alongside speakit.py file
 
 I'm using Primo Levi "If this is a man" / "Se questo è un uomo" as a source to get frequently used words.
 
